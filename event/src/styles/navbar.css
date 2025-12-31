@@ -1,0 +1,130 @@
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(22px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+/* LOGO */
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #06d8f4;
+}
+
+/* NORMAL LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-link-active {
+  padding: 0.3rem 0.7rem;
+  background: var(--nav-link-active-bg);
+  border: 1px solid var(--nav-link-active-border);
+  border-radius: 999px;
+}
+
+.nav-links a {
+  padding: 0.3rem 0.7rem;
+  color: rgb(49, 197, 197);
+  opacity: 0.85;
+  border-radius: 999px;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  background: var(--nav-link-hover-bg);
+}
+
+/* THEME BUTTON */
+.theme-btn {
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ----------- HAMBURGER MENU ----------- */
+
+.hamburger {
+  width: 28px;
+  height: 24px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* transform into X when open */
+.hamb-open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamb-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamb-open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* MOBILE NAV */
+@media (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 61px;
+    right: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    flex-direction: column;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--nav-border);
+    gap: 0.8rem;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.5rem 1.1rem;
+  }
+
+  .theme-li {
+    margin-top: 0.4rem;
+  }
+}

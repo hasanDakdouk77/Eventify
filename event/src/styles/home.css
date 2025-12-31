@@ -1,0 +1,149 @@
+/* ---------- RECENT ACTIVITY SECTION ---------- */
+
+.activity-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+  gap: 1.3rem;
+}
+
+.activity-left h2 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+}
+
+/* timeline list */
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.35rem 0.4rem;
+  border-radius: 10px;
+  background: var(--chip-bg);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.85rem;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-top: 0.35rem;
+}
+
+.activity-dot-pending {
+  background: #f97316;
+}
+
+.activity-dot-done {
+  background: #22c55e;
+}
+
+.activity-title {
+  font-weight: 500;
+}
+
+.activity-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* right side – explanation */
+
+.activity-right h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.activity-steps {
+  margin: 0 0 0.6rem;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.activity-steps li + li {
+  margin-top: 0.3rem;
+}
+
+.activity-highlight {
+  color: #6366f1;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+  .activity-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* FIX hero-tags spacing */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.hero-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: var(--text-main);
+  font-size: 0.85rem;
+}
+
+/* ===== MOBILE HOME (HERO + ACTIVITY) ===== */
+
+@media (max-width: 600px) {
+  .hero-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .hero-left h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-tags {
+    justify-content: flex-start;
+  }
+
+  .hero-right {
+    margin-top: 0.3rem;
+  }
+
+  .hero-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .activity-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .activity-list {
+    gap: 0.35rem;
+  }
+}
+

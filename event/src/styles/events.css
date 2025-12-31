@@ -1,0 +1,327 @@
+/* -------- PAGE TITLE -------- */
+
+.page-events .card h1 {
+  margin-bottom: 0.2rem;
+}
+
+/* -------- TOP CARD (ADD EVENT) -------- */
+
+.event-add-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.event-step-pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: var(--chip-bg);
+  color: var(--text-main);
+}
+
+/* -------- FORM LAYOUT -------- */
+
+.event-form-fixed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* inner panel inside card */
+.event-grid {
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.25), transparent),
+    var(--card-bg);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.25);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body.light-theme .event-grid {
+  background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.15), transparent),
+    #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.event-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.event-grid label span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* inputs */
+
+.event-grid input,
+.event-grid select,
+.event-grid textarea {
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(142, 184, 177, 0.9);
+  background: #18023b;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.event-grid textarea {
+  border-radius: 14px;
+  min-height: 80px;
+  resize: vertical;
+}
+
+body.light-theme .event-grid input,
+body.light-theme .event-grid select,
+body.light-theme .event-grid textarea {
+  background: #ffffff;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.event-grid input:focus,
+.event-grid select:focus,
+.event-grid textarea:focus {
+  border-color: rgba(129, 140, 248, 0.95);
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.65);
+}
+
+.full-row {
+  grid-column: span 3;
+}
+
+/* -------- ACTIONS UNDER FORM -------- */
+
+.event-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.page-events .event-add-btn {
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 14px 40px rgba(129, 140, 248, 0.7);
+}
+
+.page-events .event-add-btn:hover {
+  box-shadow: 0 18px 50px rgba(129, 140, 248, 0.9);
+}
+
+.event-cancel-btn {
+  padding: 0.4rem 1rem;
+}
+
+.event-hint {
+  font-size: 0.8rem;
+}
+
+/* -------- LIST CARD -------- */
+
+.event-list-card h2 {
+  margin: 0.5rem 0 0.4rem;
+}
+
+/* chips row */
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+/* filters row */
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.filters-row label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filters-row select,
+.filters-row input {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.85);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+}
+
+body.light-theme .filters-row select,
+body.light-theme .filters-row input {
+  background: #ffffff;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.search-box {
+  min-width: 190px;
+}
+
+/* -------- TABLE -------- */
+
+.event-table {
+  margin-top: 0.4rem;
+}
+
+.event-table th {
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.event-table td {
+  font-size: 0.85rem;
+}
+
+.event-table input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.event-done td {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* action buttons inside table */
+
+.small-btn {
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+}
+
+/* remove button */
+
+.btn-danger {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 0.75rem;
+  box-shadow: 0 8px 24px rgba(248, 113, 113, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(248, 113, 113, 0.7);
+}
+
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 900px) {
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .full-row {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .full-row {
+    grid-column: span 1;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters-row label {
+    width: 100%;
+  }
+
+  .filters-row select,
+  .filters-row input {
+    width: 100%;
+  }
+
+  .event-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* -------- THEMED TABLE BACKGROUNDS (LIGHT + DARK) -------- */
+
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-bg);
+}
+
+.event-table thead th {
+  background-color: rgba(6, 82, 189, 0.08);
+}
+
+.event-table tbody tr {
+  background-color: var(--table-row-bg);
+  transition: background-color 0.12s ease;
+}
+
+.event-table tbody tr:nth-child(even) {
+  background-color: var(--table-row-alt-bg);
+}
+
+/* stronger header background in dark mode */
+body.dark-theme .event-table thead th {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+/* done rows - keep them softer, not bright */
+.event-done {
+  background-color: var(--table-row-done-bg);
+}
+
+.event-done td {
+  text-decoration: line-through;
+  opacity: 0.85;
+}

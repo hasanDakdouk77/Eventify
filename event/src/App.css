@@ -1,0 +1,186 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1.5rem 1.25rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* PAGE WRAPPER */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* CARD DESIGN */
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(16px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+/* TEXT UTILS */
+
+p {
+  margin: 0.35rem 0;
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* PRIMARY BUTTON */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #f9fafb;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(129, 140, 248, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(129, 140, 248, 0.7);
+  opacity: 0.97;
+}
+
+/* OUTLINE BUTTON */
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: transparent;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(15, 23, 42, 0.07);
+}
+
+/* TABLES */
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.45rem 0.6rem;
+  font-size: 0.83rem;
+  text-align: left;
+}
+
+thead tr {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* BADGE / CHIP */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  background: var(--chip-bg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .app-main {
+    padding-inline: 1rem;
+  }
+
+  .card {
+    padding: 1.15rem 1.2rem;
+    border-radius: 16px;
+  }
+}
+
+/* ===== MOBILE GLOBAL LAYOUT ===== */
+
+@media (max-width: 600px) {
+  .app-main {
+    padding: 1rem 0.8rem 2rem;
+  }
+
+  .card {
+    padding: 1.1rem 1rem;
+    border-radius: 16px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
